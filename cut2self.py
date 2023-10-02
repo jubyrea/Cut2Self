@@ -93,7 +93,7 @@ if __name__ == "__main__":
 
             mask = torch.from_numpy(mask)
             img_input = img
-            y = img
+            y = (1-mask.detach().numpy())*img
             p1 = np.random.uniform(size=1)
             p2 = np.random.uniform(size=1)
             img_input_tensor = image_loader(img_input, device, p1, p2)
